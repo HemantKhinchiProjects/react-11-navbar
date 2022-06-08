@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { links, social } from './data';
 const Navbar = () => {
+  const [showLinks, setShowLinks] = useState(false);
+
   return (
     <nav>
       <div className="nav-center">
         <div className="nav-header">
           <i class="fa-solid fa-shield-heart logo"></i>
-          <button className="nav-toggle">
+          <button
+            className="nav-toggle"
+            onClick={() => setShowLinks(!showLinks)}
+          >
             <i class="fa-solid fa-bars"></i>
           </button>
         </div>
-        <div className="links-container show-container">
+
+        <div
+          className={`${
+            showLinks ? 'links-container show-container' : 'links-container'
+          }`}
+        >
           <ul className="links">
             {links.map((links) => {
               const { id, url, text } = links;
