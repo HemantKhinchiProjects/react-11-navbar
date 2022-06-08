@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav>
       <div className="nav-center">
         <div className="nav-header">
-          <i class="fa-solid fa-shield-heart logo"></i>
+          <i class="fa-brands fa-42-group"> &nbsp;Dummy</i>
           <button
             className="nav-toggle"
             onClick={() => setShowLinks(!showLinks)}
