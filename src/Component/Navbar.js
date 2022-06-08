@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from './Sidebar';
+import { links, social } from './data';
 const Navbar = () => {
   return (
     <nav>
@@ -10,23 +10,27 @@ const Navbar = () => {
             <i class="fa-solid fa-bars"></i>
           </button>
         </div>
-        <Sidebar />
+        <div className="links-container show-container">
+          <ul className="links">
+            {links.map((links) => {
+              const { id, url, text } = links;
+              return (
+                <li key={id}>
+                  <a href={url}>{text}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
         <ul className="social-icons">
-          <li>
-            <a href="https:www.twitter.com">
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https:www.facebook.com">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https:www.twitter.com">
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-          </li>
+          {social.map((sociallinks) => {
+            const { id, url, icon } = sociallinks;
+            return (
+              <li key={id}>
+                <a href={url}>{icon}</a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </nav>
