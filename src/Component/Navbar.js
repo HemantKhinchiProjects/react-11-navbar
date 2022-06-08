@@ -27,16 +27,19 @@ const Navbar = () => {
         </div>
         <ul className="social-icons">
           <li>
-            <a href="#">Home</a>
+            <a href="https:www.twitter.com">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
           </li>
           <li>
-            <a href="#">about</a>
+            <a href="https:www.facebook.com">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
           </li>
           <li>
-            <a href="#">product</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
+            <a href="https:www.twitter.com">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
           </li>
         </ul>
       </div>
