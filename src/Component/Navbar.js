@@ -1,4 +1,5 @@
 import React from 'react';
+import Sidebar from './Sidebar';
 const Navbar = () => {
   return (
     <nav>
@@ -6,25 +7,10 @@ const Navbar = () => {
         <div className="nav-header">
           <i class="fa-solid fa-shield-heart logo"></i>
           <button className="nav-toggle">
-            <i class="fa-solid fa-sliders"></i>
+            <i class="fa-solid fa-bars"></i>
           </button>
         </div>
-        <div className="links-container show-container">
-          <ul className="links">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">about</a>
-            </li>
-            <li>
-              <a href="#">product</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
+        <Sidebar />
         <ul className="social-icons">
           <li>
             <a href="https:www.twitter.com">
