@@ -1,7 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { links, social } from './data';
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
+  // for getting link height dynamic
+  const linksRef = useRef(null);
+  const linksContainerRef = useRef(null);
+  //every time we change
+  useEffect(
+    () => {
+      const linksHeight = linksRef.current.getBoundingClientRect().height;
+      if (showLinks) {
+        linksContainerRef.current.style.height = `${linksHeight}px`;
+      } else {
+        linksContainerRef.current.style.height = `0px`;
+      }
+    } /*call back function for check height*/,
+    [showLinks]
+  );
 
   return (
     <nav>
@@ -16,12 +31,8 @@ const Navbar = () => {
           </button>
         </div>
 
-        <div
-          className={`${
-            showLinks ? 'links-container show-container' : 'links-container'
-          }`}
-        >
-          <ul className="links">
+        <div className="links-container" ref={linksContainerRef}>
+          <ul className="links" ref={linksRef}>
             {links.map((links) => {
               const { id, url, text } = links;
               return (
