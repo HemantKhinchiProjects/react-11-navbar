@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav>
       <div className="nav-center">
         <div className="nav-header">
-          <i class="fa-brands fa-42-group"> &nbsp;Dummy</i>
+          <i class="fa-brands fa-phoenix-framework"> &nbsp;Dummy</i>
           <button
             className="nav-toggle"
             onClick={() => setShowLinks(!showLinks)}
